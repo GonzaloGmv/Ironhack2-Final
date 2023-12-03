@@ -184,16 +184,6 @@ document.addEventListener("DOMContentLoaded", function () {
         turno = (turno === 1) ? 2 : 1;
     }
 
-    function reiniciarJuego() {
-        for (let i = 0; i < filas; i++) {
-            for (let j = 0; j < columnas; j++) {
-                tablero[i][j] = 0;
-            }
-        }
-        turno = 1;
-        partidaFinalizada = false;
-        dibujarTablero();
-    }
 
     canvas.addEventListener("click", manejarClick);
     dibujarTablero();
