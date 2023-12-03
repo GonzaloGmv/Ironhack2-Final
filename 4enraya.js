@@ -169,22 +169,31 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
 
+    // Función para verificar si todas las celdas del tablero están ocupadas
     function tableroLleno() {
+        // Itera sobre cada fila y columna del tablero
         for (let i = 0; i < filas; i++) {
             for (let j = 0; j < columnas; j++) {
+                // Si encuentra una celda vacía, retorna falso
                 if (tablero[i][j] === 0) {
                     return false;
                 }
             }
         }
+        // Si no encuentra celdas vacías, retorna verdadero, indicando que el tablero está lleno
         return true;
     }
 
+    // Función para cambiar el turno de un jugador al siguiente
     function cambiarTurno() {
+        // Utiliza el operador ternario para cambiar entre los turnos 1 y 2
         turno = (turno === 1) ? 2 : 1;
     }
 
-
+    // Agrega un evento de clic al canvas que llama a la función manejarClick cuando se hace clic
     canvas.addEventListener("click", manejarClick);
+
+    // Dibuja el tablero inicial cuando se carga el DOM
     dibujarTablero();
+
 });
