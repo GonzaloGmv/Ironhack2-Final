@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Alinea los elementos en la parte superior */
     justify-content: center;
     height: 100vh;
 }
@@ -15,6 +15,21 @@ body {
 
 h1 {
     color: #333;
+    margin-bottom: 30px;
+}
+
+#contenido-juego {
+    float: left;
+    margin-right: 40px; /* Ajusta el margen derecho del contenido del juego */
+    margin-bottom: 20px; /* Aumenta la distancia debajo del tablero */
+}
+
+#instrucciones {
+    float: right;
+    max-width: 300px;
+    text-align: left;
+    margin-left: 40px; /* Ajusta el margen izquierdo de las instrucciones */
+    margin-bottom: 20px; /* Aumenta la distancia debajo de las instrucciones */
 }
 
 canvas {

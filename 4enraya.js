@@ -35,13 +35,11 @@ document.addEventListener("DOMContentLoaded", function () {
     function dibujarLineasTablero() {
         ctx.beginPath();
 
-        // Dibujar líneas horizontales
         for (let i = 1; i < filas; i++) {
             ctx.moveTo(0, i * tamañoCelda);
             ctx.lineTo(canvas.width, i * tamañoCelda);
         }
 
-        // Dibujar líneas verticales
         for (let j = 1; j < columnas; j++) {
             ctx.moveTo(j * tamañoCelda, 0);
             ctx.lineTo(j * tamañoCelda, canvas.height);
@@ -56,12 +54,13 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("La partida ha finalizado. Reinicia el juego.");
             return;
         }
-    
-        const columna = Math.floor(evento.clientX / tamañoCelda);
-    
+
+        const rect = canvas.getBoundingClientRect();
+        const columna = Math.floor((evento.clientX - rect.left) / tamañoCelda);
+
         if (realizarMovimiento(columna)) {
             dibujarTablero();
-    
+
             if (hayGanador()) {
                 setTimeout(() => {
                     alert("¡Jugador " + turno + " ha ganado!");
@@ -165,6 +164,6 @@ document.addEventListener("DOMContentLoaded", function () {
         dibujarTablero();
     }
 
-    dibujarTablero();
     canvas.addEventListener("click", manejarClick);
+    dibujarTablero();
 });

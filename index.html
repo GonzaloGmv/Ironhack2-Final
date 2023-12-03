@@ -4,13 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>4 en Línea</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="contenedor">
-        <h1>¡Juego de 4 en Raya!</h1>
-        <canvas id="tablero" width="560" height="480"></canvas>
-        <script src="4enraya.js"></script>
+        <h1>¡Juego de 4 en Línea!</h1>
+        <div id="contenido-juego">
+            <canvas id="tablero" width="560" height="480"></canvas>
+            <script src="4enraya.js"></script>
+        </div>
+        <div id="instrucciones">
+            <p>Bienvenido al juego de 4 en línea. El objetivo es conectar cuatro fichas del mismo color de manera horizontal, vertical o diagonal en el tablero.</p>
+            <p>Para jugar, haz clic en una columna para soltar una ficha en ella. La ficha caerá hasta la posición más baja disponible en esa columna.</p>
+            <p>El primer jugador en formar una línea de cuatro fichas gana la partida. ¡Que gane el mejor!</p>
+        </div>
     </div>
 </body>
 </html>
